@@ -1,0 +1,106 @@
+<div class="south-wind-cards-wrapper">
+	<div class="south-wind-rating">
+		<div class="south-wind-rating-wrap">
+			<span class="close">X</span>
+			<p>Select importance.</p>
+			<div class="rating-row rating-row1 active">
+				<span class="rate-num" data-index="0|1">1</span>
+				<span class="rate-num" data-index="0|2">2</span>
+				<span class="rate-num" data-index="0|3">3</span>
+			</div>
+			<div class="rating-row rating-row2">
+				<span class="rate-num" data-index="1|1">1</span>
+				<span class="rate-num" data-index="1|2">2</span>
+				<span class="rate-num" data-index="1|3">3</span>
+			</div>
+			<div class="rating-row rating-row3">
+				<span class="rate-num" data-index="2|1">1</span>
+			</div>
+		</div>
+	</div>
+	<div class="south-wind-cards-row step1">
+		<p class="south-wind-info">Sort Cards To Most Important, Middle Important and Least Important.<br>
+			Click on the item and then choose from 1-3 where 1 is Most Important, 2 is Middle Important 3 is Least Important
+		</p>
+		
+		<div class="south-wind-tabs">
+			<span class="south-wind-tab active" data-index="0|0">Unsorted</span>
+			<span class="south-wind-tab" data-index="0|1">Most Important</span>
+			<span class="south-wind-tab" data-index="0|2">Middle Important</span>
+			<span class="south-wind-tab" data-index="0|3">Least Important</span>
+		</div>
+		<div class="south-wind-cards-col cards-unsorted active" data-index="0|0">
+		
+		<?php if ( have_rows( 'cards', 'option' ) ) : ?>
+			<ul>
+			<!-- // Loop through rows. -->
+			<?php while ( have_rows( 'cards', 'option' ) ) : ?>
+				<?php the_row(); ?>
+
+				<!-- // Load sub field value. -->
+				<?php $sub_value = get_sub_field( 'card_name' ); ?>
+				<?php printf( '<li class="south-wind-card">%s</li>', $sub_value ); ?>
+
+				<!-- // End loop. -->
+			<?php endwhile; ?>
+			</ul>
+		<?php endif; ?>
+		</div>
+
+		<div class="south-wind-cards-col cards-most " data-index="0|1">
+			<ul></ul>
+		</div>
+
+		<div class="south-wind-cards-col cards-middle" data-index="0|2">
+			<ul></ul>
+		</div>
+
+		<div class="south-wind-cards-col cards-least" data-index="0|3">
+			<ul></ul>
+		</div>
+		<a href="#" class="south-wind-continue south-wind-step2">Continue</a>
+	</div>
+
+	<!-- // step 2 -->
+	<div class="south-wind-cards-row step2">
+		<p class="south-wind-info">Sort Previously Most Important Cards To New Three Piles</p>
+
+		<div class="south-wind-tabs">
+			<span class="south-wind-tab active" data-index="1|0">Unsorted</span>
+			<span class="south-wind-tab" data-index="1|1">Most Important</span>
+			<span class="south-wind-tab" data-index="1|2">Middle Important</span>
+			<span class="south-wind-tab" data-index="1|3">Least Important</span>
+		</div>
+
+		<div class="south-wind-cards-col cards-unsorted" data-index="1|0">
+			<ul></ul>
+		</div>
+		<div class="south-wind-cards-col cards-most" data-index="1|1">
+			<ul></ul>
+		</div>
+		<div class="south-wind-cards-col cards-middle" data-index="1|2">
+			<ul></ul>
+		</div>
+		<div class="south-wind-cards-col cards-least" data-index="1|3">
+			<ul></ul>
+		</div>
+
+		<a href="#" class="south-wind-continue south-wind-step3">Continue</a>
+	</div>
+
+	<!-- // step 3 -->
+	<div class="south-wind-cards-row step3">
+		<p class="south-wind-info">Select Top 5 From Previously Most Important</p>
+		<div class="south-wind-tabs">
+			<span class="south-wind-tab active" data-index="2|0">Unsorted</span>
+			<span class="south-wind-tab" data-index="2|1">Top 5</span>
+		</div>
+
+		<div class="south-wind-cards-col cards-unsorted" data-index="2|0">
+			<ul></ul>
+		</div>
+		<div class="south-wind-cards-col cards-most" data-index="2|1">
+			<ul></ul>
+		</div>
+	</div>
+</div>
