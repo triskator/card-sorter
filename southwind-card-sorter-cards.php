@@ -1,26 +1,7 @@
 <div class="south-wind-cards-wrapper">
-	<div class="south-wind-rating">
-		<div class="south-wind-rating-wrap">
-			<span class="close">X</span>
-			<p>Select importance.</p>
-			<div class="rating-row rating-row1 active">
-				<span class="rate-num" data-index="0|1">1</span>
-				<span class="rate-num" data-index="0|2">2</span>
-				<span class="rate-num" data-index="0|3">3</span>
-			</div>
-			<div class="rating-row rating-row2">
-				<span class="rate-num" data-index="1|1">1</span>
-				<span class="rate-num" data-index="1|2">2</span>
-				<span class="rate-num" data-index="1|3">3</span>
-			</div>
-			<div class="rating-row rating-row3">
-				<span class="rate-num" data-index="2|1">1</span>
-			</div>
-		</div>
-	</div>
 	<div class="south-wind-cards-row step1">
 		<p class="south-wind-info">Sort Cards To Most Important, Middle Important and Least Important.<br>
-			Click on the item and then choose from 1-3 where 1 is Most Important, 2 is Middle Important 3 is Least Important
+			Choose from 1-3 where 1 is Most Important, 2 is Middle Important 3 is Least Important
 		</p>
 		
 		<div class="south-wind-tabs">
@@ -39,7 +20,20 @@
 
 				<!-- // Load sub field value. -->
 				<?php $sub_value = get_sub_field( 'card_name' ); ?>
-				<?php printf( '<li class="south-wind-card">%s</li>', $sub_value ); ?>
+				<?php
+				printf(
+					'<li class="south-wind-card">
+						<span>%s</span>
+						<div class="rating-row">
+							<span class="rate-num" data-index="0">0</span>
+							<span class="rate-num" data-index="1">1</span>
+							<span class="rate-num" data-index="2">2</span>
+							<span class="rate-num" data-index="3">3</span>
+						</div>
+					</li>',
+					$sub_value
+				);
+				?>
 
 				<!-- // End loop. -->
 			<?php endwhile; ?>

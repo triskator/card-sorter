@@ -11,40 +11,43 @@ jQuery(function () {
   });
 
   jQuery('.south-wind-rating .close').on('click', function (e) {
-    southActiveItem = undefined;
+    // southActiveItem = undefined;
     jQuery('.south-wind-rating').hide();
   });
 
-  let southActiveItem = undefined;
-  jQuery('.south-wind-card').on('click', function (e) {
-    jQuery('.south-wind-rating').show();
-    var theThing =  document.getElementsByClassName('.south-wind-rating')[0];
-    var el = jQuery('.south-wind-rating');
-    var theThing = el[0]
-    southActiveItem = e.currentTarget;
-    // console.log(el);
-    let parent = jQuery(e.currentTarget).closest('.south-wind-cards-col')
-    var parentPosition = getPosition(parent[0]);
-    // var parentPosition = getPosition(e.currentTarget);
-    // var xPosition = e.clientX - parentPosition.x + (50);
-    // var yPosition = e.clientY - parentPosition.y + (70);
-    var xPosition = (e.clientX - parentPosition.x) + 50 ;
-    var yPosition = (e.clientY - parentPosition.y) + 50;
-     if( window.screen.width < (xPosition + (200)) ) {
-      xPosition = window.screen.width - (200)
-     }
-     if( 0 > xPosition ) {
-      xPosition = 0;
-     }
-    theThing.style.left = xPosition + "px";
-    theThing.style.top = yPosition + "px";
-  });
-  jQuery('.south-wind-rating .rate-num').on('click', function (e) {
+
+  // jQuery('.south-wind-card').on('click', function (e) {
+  //   jQuery('.south-wind-rating').show();
+  //   var theThing =  document.getElementsByClassName('.south-wind-rating')[0];
+  //   var el = jQuery('.south-wind-rating');
+  //   var theThing = el[0]
+  //   southActiveItem = e.currentTarget;
+  //   // console.log(el);
+  //   let parent = jQuery(e.currentTarget).closest('.south-wind-cards-col')
+  //   var parentPosition = getPosition(parent[0]);
+  //   // var parentPosition = getPosition(e.currentTarget);
+  //   // var xPosition = e.clientX - parentPosition.x + (50);
+  //   // var yPosition = e.clientY - parentPosition.y + (70);
+  //   var xPosition = (e.clientX - parentPosition.x) + 50 ;
+  //   var yPosition = (e.clientY - parentPosition.y) + 50;
+  //    if( window.screen.width < (xPosition + (200)) ) {
+  //     xPosition = window.screen.width - (200)
+  //    }
+  //    if( 0 > xPosition ) {
+  //     xPosition = 0;
+  //    }
+  //   theThing.style.left = xPosition + "px";
+  //   theThing.style.top = yPosition + "px";
+  // });
+  jQuery('.south-wind-card .rate-num').on('click', function (e) {
     // move it and hide
     let dataIndex = jQuery(this).data('index');
-    jQuery('.south-wind-cards-col[data-index="' + dataIndex + '"] ul').append(jQuery(southActiveItem));
+    let colIndex = jQuery(this).closest('.south-wind-cards-col').data('index');
+    let colIndexR = colIndex.split('|');
+    let southActiveItem = jQuery(this).closest('.south-wind-card');
+    jQuery('.south-wind-cards-col[data-index="' + colIndexR[0] + '|' + dataIndex + '"] ul').append(jQuery(southActiveItem));
     jQuery('.south-wind-rating').hide();
-    southActiveItem = undefined;
+    // southActiveItem = undefined;
   });
   jQuery('.south-wind-step2').on('click', function (e) {
     e.preventDefault();
