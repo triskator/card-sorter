@@ -11,6 +11,7 @@
 			<span class="south-wind-tab" data-index="0|3">Least Important</span>
 		</div>
 		<div class="south-wind-cards-col cards-unsorted active" data-index="0|0">
+		<?php $img_path = plugins_url( 'southwind-card-sorter/img/' ); ?>
 		
 		<?php if ( have_rows( 'cards', 'option' ) ) : ?>
 			<ul>
@@ -25,13 +26,17 @@
 					'<li class="south-wind-card">
 						<span>%s</span>
 						<div class="rating-row">
-							<span class="rate-num" data-index="0">0</span>
-							<span class="rate-num" data-index="1">1</span>
-							<span class="rate-num" data-index="2">2</span>
-							<span class="rate-num" data-index="3">3</span>
+							<span class="rate-num" data-index="0"><img src="%s" /></span>
+							<span class="rate-num" data-index="1"><img src="%s" /></span>
+							<span class="rate-num" data-index="2"><img src="%s" /></span>
+							<span class="rate-num" data-index="3"><img src="%s" /></span>
 						</div>
 					</li>',
-					$sub_value
+					$sub_value,
+					$img_path . 'star.svg',
+					$img_path . 'sparkles-outline.svg',
+					$img_path . 'star-half-outline.svg',
+					$img_path . 'star.svg'
 				);
 				?>
 

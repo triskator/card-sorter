@@ -2,15 +2,7 @@
 .south-wind-cards-row.step3 {
     display: none;
 }
-span.rate-num[data-index="0"]{
-	display: none;
-}
-.step3 span.rate-num[data-index="2"], .step3 span.rate-num[data-index="3"] {
-    display: none;
-}
-.step3 span.rate-num[data-index="0"]{
-	display: inline;
-}
+
 .south-wind-cards-col ul:empty:before {
     content: "No items.";
 }
@@ -84,7 +76,26 @@ span.rate-num[data-index="0"]{
 			background: #ccc3b6;
 			padding: 5px 10px;
 			border-radius: 5px;
+			display: inline-flex;
+			img{
+				height: 18px;
+			}
+		}
+		.rate-num[data-index="0"]{
+			display: none;
 		}
 	  }
 
+}
+
+.step3 {
+	.south-wind-cards-col .south-wind-card {
+		.rate-num[data-index="2"], .rate-num[data-index="3"]{
+			display: none;
+		}
+		.rate-num[data-index="0"]{
+			display: inline-flex;
+		}
+	}
+	
 }
