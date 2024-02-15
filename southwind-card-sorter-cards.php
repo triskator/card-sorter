@@ -26,17 +26,13 @@
 					'<li class="south-wind-card">
 						<span>%s</span>
 						<div class="rating-row">
-							<span class="rate-num" data-index="0"><img src="%s" /></span>
-							<span class="rate-num" data-index="1"><img src="%s" /></span>
-							<span class="rate-num" data-index="2"><img src="%s" /></span>
-							<span class="rate-num" data-index="3"><img src="%s" /></span>
+							<span class="rate-num" data-index="0">0</span>
+							<span class="rate-num" data-index="1">1</span>
+							<span class="rate-num" data-index="2">2</span>
+							<span class="rate-num" data-index="3">3</span>
 						</div>
 					</li>',
-					$sub_value,
-					$img_path . 'star.svg',
-					$img_path . 'sparkles-outline.svg',
-					$img_path . 'star-half-outline.svg',
-					$img_path . 'star.svg'
+					$sub_value
 				);
 				?>
 
